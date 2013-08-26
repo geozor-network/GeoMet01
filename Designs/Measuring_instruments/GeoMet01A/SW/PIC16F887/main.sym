@@ -1,0 +1,210 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021-024 MAIN.temp1
+025-028 MAIN.temp2
+029-02C MAIN.humidity
+02D-02E MAIN.i
+02F     LTS01_get_temp.MSB
+02F-030 @PRINTF_LD_9600_62_63.P1
+02F-032 @PRINTF_L32D_9600_62_63FPFPF.P2
+02F     lcd_init.i
+02F-032 @PRINTF_L32D_98FPFPF.P1
+02F     SHT25_get_temp.MSB
+02F     SHT25_get_hum.MSB
+02F     MAIN.@SCRATCH1
+02F     @PSTRINGC7_9600_62_63.@SCRATCH1
+02F     @PSTRINGC7_98.@SCRATCH1
+030     LTS01_get_temp.LSB
+030     SHT25_get_temp.LSB
+030     SHT25_get_hum.LSB
+030     lcd_init.@SCRATCH1
+030     @PSTRINGC7_9600_62_63.@SCRATCH2
+030     @PSTRINGC7_98.@SCRATCH2
+031     SHT25_get_hum.Check
+031-032 LTS01_get_temp.data
+031     SHT25_get_temp.Check
+031     @PSTRINGC7_9600_62_63.@SCRATCH3
+031     @PSTRINGC7_98.@SCRATCH3
+031     @PRINTF_LD_9600_62_63.@SCRATCH1
+032-033 SHT25_get_temp.data
+032-033 SHT25_get_hum.data
+032     @PRINTF_LD_9600_62_63.@SCRATCH2
+033     @PRINTF_L32D_98FPFPF.P1
+033     @PRINTF_L32D_9600_62_63FPFPF.P2
+033     LTS01_get_temp.@SCRATCH1
+033     @PRINTF_LD_9600_62_63.@SCRATCH3
+034     @I2C_WRITE_1.P1
+034     @I2C_READ_1.P2
+034-035 @ITOF.P3
+034-037 @ADDFF.P4
+034     SHT25_get_temp.@SCRATCH1
+034     SHT25_get_hum.@SCRATCH1
+034     LTS01_get_temp.@SCRATCH2
+034     @PRINTF_L32D_98FPFPF.@SCRATCH1
+034     @PRINTF_LD_9600_62_63.@SCRATCH4
+034     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH1
+035-036 @SITOF.P1
+035     @I2C_READ_1.@SCRATCH1
+035     SHT25_get_temp.@SCRATCH2
+035     SHT25_get_hum.@SCRATCH2
+035     @PRINTF_L32D_98FPFPF.@SCRATCH2
+035     @PRINTF_LD_9600_62_63.@SCRATCH5
+035     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH2
+036     @I2C_READ_1.@SCRATCH2
+036     SHT25_get_temp.@SCRATCH3
+036     SHT25_get_hum.@SCRATCH3
+036     @PRINTF_L32D_98FPFPF.@SCRATCH3
+036     @PRINTF_LD_9600_62_63.@SCRATCH6
+036     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH3
+037     SHT25_get_temp.@SCRATCH4
+037     SHT25_get_hum.@SCRATCH4
+037     @PRINTF_L32D_98FPFPF.@SCRATCH4
+037     @PRINTF_LD_9600_62_63.@SCRATCH7
+037     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH4
+038-03B @DIVFF.P1
+038-03B @ADDFF.P2
+038     @PRINTF_L32D_98FPFPF.@SCRATCH5
+038     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH5
+039     @PRINTF_L32D_98FPFPF.@SCRATCH6
+039     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH6
+03A     @PRINTF_L32D_98FPFPF.@SCRATCH7
+03A     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH7
+03B     @PRINTF_L32D_98FPFPF.@SCRATCH8
+03B     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH8
+03C-03F @FTOSD.P1
+03C-03F @MULFF.P2
+03C-03F @DIV3232.P3
+03C     lcd_putc.c
+03C-03F @DIVFF.P1
+03C     @ADDFF.@SCRATCH1
+03D     lcd_gotoxy.x
+03D     @delay_ms1.P1
+03D     @ADDFF.@SCRATCH2
+03E     lcd_gotoxy.y
+03E     @ADDFF.@SCRATCH3
+03F     lcd_gotoxy.address
+03F     @ADDFF.@SCRATCH4
+040-043 @DIV3232.P1
+040-043 @MULFF.P2
+040     lcd_gotoxy.@SCRATCH1
+040     @DIVFF.@SCRATCH1
+040     @ADDFF.@SCRATCH5
+040     @FTOSD.@SCRATCH1
+041     lcd_send_byte.address
+041     @DIVFF.@SCRATCH2
+041     @ADDFF.@SCRATCH6
+042     lcd_send_byte.n
+042     @DIVFF.@SCRATCH3
+042     @ADDFF.@SCRATCH7
+043     lcd_read_byte.low
+043     lcd_send_byte.@SCRATCH1
+043     @DIVFF.@SCRATCH4
+043     @ADDFF.@SCRATCH8
+044     lcd_send_nibble.n
+044     lcd_read_byte.high
+044     @DIVFF.@SCRATCH5
+044     @MULFF.@SCRATCH1
+044     @DIV3232.@SCRATCH1
+045     lcd_read_nibble.n
+045     lcd_read_byte.@SCRATCH1
+045     @DIVFF.@SCRATCH6
+045     @MULFF.@SCRATCH2
+045     @DIV3232.@SCRATCH2
+046     lcd_read_nibble.@SCRATCH1
+046     @MULFF.@SCRATCH3
+046     @DIV3232.@SCRATCH3
+047     @MULFF.@SCRATCH4
+047     @DIV3232.@SCRATCH4
+048     @MULFF.@SCRATCH5
+048     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0078  @delay_ms1
+024C  @I2C_READ_1
+0202  @I2C_WRITE_1
+0004  LCD_INIT_STRING
+00F1  lcd_read_byte
+00B8  lcd_read_nibble
+008C  lcd_send_nibble
+00E9  lcd_send_byte
+0145  lcd_init
+017D  lcd_gotoxy
+018F  lcd_putc
+052E  SHT25_get_temp
+0291  @ITOF
+02AE  @DIVFF
+0378  @MULFF
+03ED  @ADDFF
+05FD  SHT25_get_hum
+06B3  LTS01_get_temp
+072E  @SITOF
+0A28  MAIN
+000C  @const141
+0030  @PSTRINGC7_9600_62_63
+0012  @const143
+001B  @const144
+0022  @const145
+01BC  @PSTRINGC7_98
+002A  @const147
+0763  @FTOSD
+0782  @DIV3232
+0800  @PRINTF_L32D_98FPFPF
+08DA  @PRINTF_LD_9600_62_63
+0952  @PRINTF_L32D_9600_62_63FPFPF
+0A28  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    Z:\home\kaklik\svnMLAB\Designs\Measuring_instruments\GeoMet01A\SW\PIC16F887\
+
+Project Files:
+    main.c
+    main.h
+    C:\Program Files (x86)\PICC\devices\16F887.h
+    C:\Program Files (x86)\PICC\drivers\lcd.c
+    ..\SHT25.h
+    ..\SHT25.c
+    ..\LTS01.h
+    ..\LTS01.c
+
+Units:
+    Z:\home\kaklik\svnMLAB\Designs\Measuring_instruments\GeoMet01A\SW\PIC16F887\main (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.sta
