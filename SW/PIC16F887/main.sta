@@ -1,0 +1,82 @@
+
+ROM used: 2940 (36%)
+          3000 (37%) including unused fragments
+
+          3 Average locations per line
+          16 Average locations per statement
+
+RAM used: 21 (6%) at main() level
+          46 (12%) worst case
+
+Stack used: 5 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   58    30  17  main.c
+   22     0   0  main.h
+  423     0   0  C:\Program Files (x86)\PICC\devices\16F887.h
+  408    88  49  C:\Program Files (x86)\PICC\drivers\lcd.c
+   14     0   0  ..\SHT25.h
+   92    51  28  ..\SHT25.c
+    8     0   0  ..\LTS01.h
+   22    11   6  ..\LTS01.c
+----- -----
+ 1047   180 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   1   1             @delay_ms1
+0     69   2   3             @I2C_READ_1
+0     74   3   1             @I2C_WRITE_1
+0      8   0   0             @const80
+ Inline        3   751  4.5  lcd_read_byte
+0     49   2   2   254  3.7  lcd_read_nibble
+0     44   1   1   391  2.4  lcd_send_nibble
+0     92   3   3   402  3.6  lcd_send_byte
+0     56   2   2   666  5.0  lcd_init
+0     18   1   4   191  5.8  lcd_gotoxy
+0     45   2   1   354  4.7  lcd_putc
+0    207   7   9   572  6.0  SHT25_get_temp
+0     29   1   2             @ITOF
+0    202   7  14             @DIVFF
+0    117   4  13             @MULFF
+0    321  11  16             @ADDFF
+0    182   6   9   554  5.9  SHT25_get_hum
+0    176   6   6   354  3.9  LTS01_get_temp
+ Inline        2  1053  3.9  @SITOF
+1    400  14  15  1053  3.9  MAIN
+0      6   0   0             @const141
+0     72   2   3             @PSTRINGC7_9600_62_63
+0      9   0   0             @const143
+0      7   0   0             @const144
+0      8   0   0             @const145
+0     70   2   3             @PSTRINGC7_98
+0      6   0   0             @const147
+0     31   1   5             @FTOSD
+0     66   2  13             @DIV3232
+1    218   7  13             @PRINTF_L32D_98FPFPF
+1    120   4   9             @PRINTF_LD_9600_62_63
+1    214   7  13             @PRINTF_L32D_9600_62_63FPFPF
+
+Program metrics:
+    Functions               12
+    Statements              180
+    Comments                201
+    Volume (V)              10540
+    Difficilty (D)          50.7
+    Effort to implement (E) 534809
+    Time to implement (T)   8 hours, 15 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   8
+    Maintainability (MI)    95
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1984  60  
+00800-00FFF   952  1096  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

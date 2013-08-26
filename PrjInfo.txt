@@ -1,0 +1,16 @@
+﻿//
+// Toto je popisný soubor pro popis obsahu adresáře (příklad)
+//
+
+[InfoShortDescription.en]
+ Simple digital thermometer
+
+[InfoShortDescription.cs]
+  Jednoduchý digitální teploměr
+  
+[InfoLongDescription.en]
+  This thermometer reads the temperature from DS18B20 sensor and displays it on LCD in Kelvin degrees.
+
+[InfoLongDescription.cs]
+  Snímá teplotu pomocí čidla DS18B20 a zobrazuje ji na LCD ve stupních Kelvina.
+[End]
