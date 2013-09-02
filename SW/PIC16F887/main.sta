@@ -1,33 +1,36 @@
 
-ROM used: 2940 (36%)
-          3000 (37%) including unused fragments
+ROM used: 3183 (39%)
+          3186 (39%) including unused fragments
 
-          3 Average locations per line
-          16 Average locations per statement
+          1 Average locations per line
+          7 Average locations per statement
 
-RAM used: 21 (6%) at main() level
-          46 (12%) worst case
+RAM used: 27 (7%) at main() level
+          52 (14%) worst case
 
 Stack used: 5 worst case (out of 8 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   58    30  17  main.c
+   69    35   7  main.c
    22     0   0  main.h
   423     0   0  C:\Program Files (x86)\PICC\devices\16F887.h
-  408    88  49  C:\Program Files (x86)\PICC\drivers\lcd.c
+  408    88  19  C:\Program Files (x86)\PICC\drivers\lcd.c
    14     0   0  ..\SHT25.h
-   92    51  28  ..\SHT25.c
+   92    51  11  ..\SHT25.c
     8     0   0  ..\LTS01.h
-   22    11   6  ..\LTS01.c
+   22    11   2  ..\LTS01.c
+   25     0   0  ..\.\HMC5883L.h
+   76    28   6  ..\HMC5883L.c
+ 2172   260  55  C:\Program Files (x86)\PICC\drivers\math.h
 ----- -----
- 1047   180 Total
+ 3331   473 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     20   1   1             @delay_ms1
 0     69   2   3             @I2C_READ_1
-0     74   3   1             @I2C_WRITE_1
+0     74   2   1             @I2C_WRITE_1
 0      8   0   0             @const80
  Inline        3   751  4.5  lcd_read_byte
 0     49   2   2   254  3.7  lcd_read_nibble
@@ -35,46 +38,48 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     92   3   3   402  3.6  lcd_send_byte
 0     56   2   2   666  5.0  lcd_init
 0     18   1   4   191  5.8  lcd_gotoxy
-0     45   2   1   354  4.7  lcd_putc
+0     45   1   1   354  4.7  lcd_putc
 0    207   7   9   572  6.0  SHT25_get_temp
-0     29   1   2             @ITOF
-0    202   7  14             @DIVFF
+0     29   1   2   572  6.0  @ITOF
+0    202   6  14             @DIVFF
 0    117   4  13             @MULFF
-0    321  11  16             @ADDFF
+0    321  10  16             @ADDFF
 0    182   6   9   554  5.9  SHT25_get_hum
-0    176   6   6   354  3.9  LTS01_get_temp
- Inline        2  1053  3.9  @SITOF
-1    400  14  15  1053  3.9  MAIN
-0      6   0   0             @const141
+0    176   6   6   382  2.7  LTS01_get_temp
+ Inline        2   382  2.7  @SITOF
+0     57   2   2   102  1.8  hmc5883l_write_reg
+1    145   5   6   636  3.3  hmc5883l_read_data
+1    443  14  15  1342  4.4  MAIN
+0      6   0   0  1381  4.4  @const282
 0     72   2   3             @PSTRINGC7_9600_62_63
-0      9   0   0             @const143
-0      7   0   0             @const144
-0      8   0   0             @const145
+0      9   0   0             @const284
+0      7   0   0             @const285
+0      8   0   0             @const286
 0     70   2   3             @PSTRINGC7_98
-0      6   0   0             @const147
+0      6   0   0             @const288
 0     31   1   5             @FTOSD
 0     66   2  13             @DIV3232
 1    218   7  13             @PRINTF_L32D_98FPFPF
-1    120   4   9             @PRINTF_LD_9600_62_63
+1    118   4   9             @PRINTF_LD_9600_62_63
 1    214   7  13             @PRINTF_L32D_9600_62_63FPFPF
 
 Program metrics:
-    Functions               12
-    Statements              180
-    Comments                201
-    Volume (V)              10540
-    Difficilty (D)          50.7
-    Effort to implement (E) 534809
-    Time to implement (T)   8 hours, 15 minutes
-    Est Delivered Bugs (B)  2
+    Functions               16
+    Statements              473
+    Comments                472
+    Volume (V)              14718
+    Difficilty (D)          64.8
+    Effort to implement (E) 953628
+    Time to implement (T)   14 hours, 43 minutes
+    Est Delivered Bugs (B)  3
     Cyclomatic Complexity   8
-    Maintainability (MI)    95
+    Maintainability (MI)    123
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  1984  60  
-00800-00FFF   952  1096  
+00004-007FF  2041  3  
+00800-00FFF  1138  910  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
 
