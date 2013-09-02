@@ -11,6 +11,9 @@
 
 #include "../SHT25.h"
 #include "../LTS01.h"
+#include "./HMC5883L.h"
+#include <math.h>
+
 
 void main()
 {
@@ -28,9 +31,15 @@ int16 i=0;
    setup_oscillator(OSC_8MHZ);
 
 
-   printf("GeoMet01A\r\n",);
+   printf("GeoMet01A\r\n");
    printf("(c) Kaklik 2013\r\n");
    printf("www.mlab.cz\r\n");
+   
+   // Init the HMC5883L.  Set Mode register for
+   // continuous measurements.
+   hmc5883l_write_reg(HMC5883L_CFG_A_REG, 0x18);      // no average, maximal update range
+   hmc5883l_write_reg(HMC5883L_CFG_B_REG, 0x00);      // minimal range
+   hmc5883l_write_reg(HMC5883L_MODE_REG, 0x00);
 
    lcd_init();
    lcd_putc("(c) Kaklik 2013");
@@ -45,11 +54,13 @@ int16 i=0;
      temp1 = SHT25_get_temp();
      humidity = SHT25_get_hum();
      temp2= LTS01_get_temp();
-
-     printf(lcd_putc,"%f C %f \%% \r\n",temp1, humidity);
+     hmc5883l_read_data(); 
+   
+     printf(lcd_putc,"%f C %f \%%",temp1, humidity);
      lcd_gotoxy(1,2);
      printf(lcd_putc," %f C",temp2);
-     printf("%ld %f %f %f \r\n",i, temp1, humidity, temp2);
+     printf("%ld %f %f %f ",i, temp1, humidity, temp2);
+     printf("%Ld %Ld %Ld \n\r", compass.x, compass.y, compass.z);
      i++;
      Delay_ms(100);
    }
