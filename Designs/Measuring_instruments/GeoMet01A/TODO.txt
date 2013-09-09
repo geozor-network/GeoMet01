@@ -1,0 +1,10 @@
+Doplnit odhad vysledne teploty na zaklade poklesu teploty cidla pri ponoreni do kapaliny. (extrapolace teploty  podle prestupu tepla z cidla)
+K zobrazování hystorie magnetickeho pole vyuzit ctyruhelnik rozvinuty do minulosti v 3D prostoru (v ekonomii je toto zobrazeni zname, jako magicky ctyruhelnik)
+Chybi mereni koncentrace sirovodiku, oxidu siry a dalsich nebezpecnych plynu, ktere se bezne vyskytuji v geologicky aktivnich oblastech.
+vyborne by take bylo pristroj doplnit o mereni PH, kvuli orientacnimu zjisteni bezpecnosti nahromadene kapaliny.
+Pro měření vysokých teplot, lze přístroj vybavit modulem THERMOPHILE01A, který měrí teplotu bezkontakně infračerveným zářením. Tento způsob měření je navíc rychlejší a výrazně urychlí průhod lávovým polem a nebo orientaci mezi vulkanickými hotspoty.
+
+
+Další verzi doplnit o seismická a infrazvuková čidla a časovou synchronizaci podle GPS času. Takový systém by pak umožnil mapování geologického podkladu jednotkovým impulzem ze řízeného výbuchu.
+
+
