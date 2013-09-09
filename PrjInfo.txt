@@ -1,16 +1,12 @@
-﻿//
-// Toto je popisný soubor pro popis obsahu adresáře (příklad)
-//
-
 [InfoShortDescription.en]
- Simple digital thermometer
+ Geological multimeter
 
 [InfoShortDescription.cs]
-  Jednoduchý digitální teploměr
+ Geologický multimetr
   
 [InfoLongDescription.en]
-  This thermometer reads the temperature from DS18B20 sensor and displays it on LCD in Kelvin degrees.
+  This instrument measures several variables (temperature, humidity magnetic field values) and displays its on LCD. Measured variables is send over serial interface too - this feature is useful for logging.
 
 [InfoLongDescription.cs]
-  Snímá teplotu pomocí čidla DS18B20 a zobrazuje ji na LCD ve stupních Kelvina.
+  Zařízení měří několik veličin (teplotu, vlhkost a magnetické pole) naměřené veličiny pak zobrazuje na LCD displeji a zároveň odesílá na seriový port - to umožňuje i záznam měřených hodnot.
 [End]
