@@ -14,10 +14,15 @@
 #include "./HMC5883L.h"
 #include <math.h>
 
+#define MPL3115_ADDR_R  0xC1 //addresa pro cteni
+#define MPL3115_ADDR_W  0xC0
+
+#include "../MPL3115.h"
+
 
 void main()
 {
-float temp1, temp2, humidity;
+float temp1, temp2, temp3, humidity, preasure;
 int16 i=0; 
 
    setup_adc_ports(NO_ANALOGS|VSS_VDD);
@@ -55,13 +60,18 @@ int16 i=0;
      humidity = SHT25_get_hum();
      temp2= LTS01_get_temp();
      hmc5883l_read_data(); 
-   
-     printf(lcd_putc,"%f C %f \%%",temp1, humidity);
+ 
+     temp3=mpl3115_T();
+     preasure=mpl3115_P();
+     mpl3115_setP(); //nastaveni pro tlak a teplotu
+
+     printf(lcd_putc,"%2.2f%cC %2.2f\%%",temp1, 0xb2, humidity);
      lcd_gotoxy(1,2);
-     printf(lcd_putc," %f C",temp2);
-     printf("%ld %f %f %f ",i, temp1, humidity, temp2);
-     printf("%Ld %Ld %Ld \n\r", compass.x, compass.y, compass.z);
+     printf(lcd_putc,"%2.2f%cC %6.0fPa ",temp2, 0xb2, preasure);
+
+     printf("%ld %f %f %f %6.2f %3.2f %Ld %Ld %Ld \n\r",i, temp1, humidity, temp2, preasure, temp3, compass.x, compass.y, compass.z);
      i++;
+
      Delay_ms(100);
    }
 
