@@ -1,30 +1,32 @@
 
-ROM used: 3183 (39%)
-          3186 (39%) including unused fragments
+ROM used: 3809 (46%)
+          3819 (47%) including unused fragments
 
           1 Average locations per line
           7 Average locations per statement
 
-RAM used: 27 (7%) at main() level
-          52 (14%) worst case
+RAM used: 35 (10%) at main() level
+          72 (20%) worst case
 
 Stack used: 5 worst case (out of 8 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   69    35   7  main.c
+   79    37   7  main.c
    22     0   0  main.h
-  423     0   0  C:\Program Files (x86)\PICC\devices\16F887.h
-  408    88  19  C:\Program Files (x86)\PICC\drivers\lcd.c
+  423     0   0  C:\Program Files\PICC\devices\16F887.h
+  408    88  17  C:\Program Files\PICC\drivers\lcd.c
    14     0   0  ..\SHT25.h
-   92    51  11  ..\SHT25.c
+   92    51  10  ..\SHT25.c
     8     0   0  ..\LTS01.h
    22    11   2  ..\LTS01.c
    25     0   0  ..\.\HMC5883L.h
-   76    28   6  ..\HMC5883L.c
- 2172   260  55  C:\Program Files (x86)\PICC\drivers\math.h
+   76    28   5  ..\HMC5883L.c
+ 2172   260  49  C:\Program Files\PICC\drivers\math.h
+   12     0   0  ..\MPL3115.h
+  106    53  10  ..\MPL3115.c
 ----- -----
- 3331   473 Total
+ 3459   528 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -33,44 +35,49 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     74   2   1             @I2C_WRITE_1
 0      8   0   0             @const80
  Inline        3   751  4.5  lcd_read_byte
-0     49   2   2   254  3.7  lcd_read_nibble
+0     49   1   2   254  3.7  lcd_read_nibble
 0     44   1   1   391  2.4  lcd_send_nibble
-0     92   3   3   402  3.6  lcd_send_byte
-0     56   2   2   666  5.0  lcd_init
-0     18   1   4   191  5.8  lcd_gotoxy
+0     92   2   3   402  3.6  lcd_send_byte
+0     56   1   2   666  5.0  lcd_init
+0     18   0   4   191  5.8  lcd_gotoxy
 0     45   1   1   354  4.7  lcd_putc
-0    207   7   9   572  6.0  SHT25_get_temp
-0     29   1   2   572  6.0  @ITOF
-0    202   6  14             @DIVFF
-0    117   4  13             @MULFF
-0    321  10  16             @ADDFF
-0    182   6   9   554  5.9  SHT25_get_hum
-0    176   6   6   382  2.7  LTS01_get_temp
- Inline        2   382  2.7  @SITOF
-0     57   2   2   102  1.8  hmc5883l_write_reg
-1    145   5   6   636  3.3  hmc5883l_read_data
-1    443  14  15  1342  4.4  MAIN
-0      6   0   0  1381  4.4  @const282
+0    207   5   9   572  6.0  SHT25_get_temp
+0     29   1   2             @ITOF
+0    202   5  14             @DIVFF
+0    117   3  13             @MULFF
+0    321   8  16             @ADDFF
+0    182   5   9   554  5.9  SHT25_get_hum
+0    176   5   6   382  2.7  LTS01_get_temp
+ Inline        2             @SITOF
+0     57   1   2   102  1.8  hmc5883l_write_reg
+1    145   4   6   636  3.3  hmc5883l_read_data
+1    189   5   0   280  1.4  mpl3115_setP
+0     90   2   2   167  2.4  mpl3115_read
+1     98   3  13   206  4.3  mpl3115_T
+1    186   5  22   411  5.7  mpl3115_P
+ Inline        4             @DTOF
+1    518  14  23  1525  4.4  MAIN
+0      6   0   0             @const306
 0     72   2   3             @PSTRINGC7_9600_62_63
-0      9   0   0             @const284
-0      7   0   0             @const285
-0      8   0   0             @const286
+0      9   0   0             @const308
+0      7   0   0             @const309
+0      8   0   0             @const310
 0     70   2   3             @PSTRINGC7_98
-0      6   0   0             @const288
-0     31   1   5             @FTOSD
-0     66   2  13             @DIV3232
-1    218   7  13             @PRINTF_L32D_98FPFPF
-1    118   4   9             @PRINTF_LD_9600_62_63
-1    214   7  13             @PRINTF_L32D_9600_62_63FPFPF
+0      6   0   0             @const312
+1     31   1   5             @FTOSD
+1     66   2  13             @DIV3232
+1    212   6  13             @PRINTF_L32D_98FPFPF
+1    118   3   9             @PRINTF_LD_9600_62_63
+1    208   5  13             @PRINTF_L32D_9600_62_63FPFPF
 
 Program metrics:
-    Functions               16
-    Statements              473
-    Comments                472
-    Volume (V)              14718
-    Difficilty (D)          64.8
-    Effort to implement (E) 953628
-    Time to implement (T)   14 hours, 43 minutes
+    Functions               17
+    Statements              528
+    Comments                500
+    Volume (V)              13217
+    Difficilty (D)          64.9
+    Effort to implement (E) 857938
+    Time to implement (T)   13 hours, 14 minutes
     Est Delivered Bugs (B)  3
     Cyclomatic Complexity   8
     Maintainability (MI)    123
@@ -78,8 +85,8 @@ Program metrics:
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  2041  3  
-00800-00FFF  1138  910  
+00004-007FF  2034  10  
+00800-00FFF  1771  277  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
 

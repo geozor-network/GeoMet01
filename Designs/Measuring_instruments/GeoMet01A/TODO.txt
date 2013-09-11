@@ -1,9 +1,10 @@
 Doplnit odhad vysledne teploty na zaklade poklesu teploty cidla pri ponoreni do kapaliny. (extrapolace teploty  podle prestupu tepla z cidla)
 K zobrazování hystorie magnetickeho pole vyuzit ctyruhelnik rozvinuty do minulosti v 3D prostoru (v ekonomii je toto zobrazeni zname, jako magicky ctyruhelnik)
 Chybi mereni koncentrace sirovodiku, oxidu siry a dalsich nebezpecnych plynu, ktere se bezne vyskytuji v geologicky aktivnich oblastech.
-vyborne by take bylo pristroj doplnit o mereni PH, kvuli orientacnimu zjisteni bezpecnosti nahromadene kapaliny.
-Pro měření vysokých teplot, lze přístroj vybavit modulem THERMOPHILE01A, který měrí teplotu bezkontakně infračerveným zářením. Tento způsob měření je navíc rychlejší a výrazně urychlí průhod lávovým polem a nebo orientaci mezi vulkanickými hotspoty.
 
+vyborne by take bylo pristroj doplnit o mereni PH, kvuli orientacnimu zjisteni bezpecnosti nahromadene kapaliny.
+Reflektometr pro měření parametrů kapaliny by mohl vyuzivat symetricke vedeni, kde by se šířil vygenerovaný impuls. Parametry vedení by pak byly ovlivňeny vlastnostmi materiálu vyplňujícím prostor mezi vodiči vedení. Tento materiál by pak mohl měnit svoje elektrické vlastnosti na základě absorpce některých látek (tímto způsobem by proto bylo možně měřit chemické vsatnosti jako salinitu, PH, konduktivitu).
+Jako vedení by mohlo být možné použít buď komorový koaxiální kabel nebo koaxiální trubkové elektrody. Podobný přístroj by pak bylo možné využít i k měření rozložení impedanca po délce vedení. Tedy například k měřění výšky hladiny ve vrtu, nebo k měřění obsahu vlhkosti v hornině.
 
 Další verzi doplnit o seismická a infrazvuková čidla a časovou synchronizaci podle GPS času. Takový systém by pak umožnil mapování geologického podkladu jednotkovým impulzem ze řízeného výbuchu.
 
